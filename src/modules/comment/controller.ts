@@ -58,4 +58,6 @@ export class CommentController {
 
     return res.status(HttpStatusCodes.OK)
   }
+
+  async editCommentById(req: Request, res: Response) {}
 }
