@@ -7,11 +7,11 @@
     "node": ">=18"
   },
   "scripts": {
-    "dev": "nodemon --exec ts-node src/server.ts",
-    "build": "rm -fr ./dist && tsc",
-    "start": "node ./dist/server.js",
-    "start:dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts",
-    "seed": "ts-node src/database/seeders/index.ts"
+    "start": "tsx src/server.ts",
+    "start:dev": "tsx watch src/server.ts",
+    "build": "tsup src",
+    "start:build": "node dist/server.js",
+    "seed": "tsx src/database/seeders/index.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.2.0",
@@ -29,10 +29,9 @@
     "@types/express": "^4.17.17",
     "@types/node": "^20.5.8",
     "@types/node-cron": "^3.0.8",
-    "nodemon": "^3.0.1",
     "prisma": "^5.2.0",
-    "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
+    "tsup": "^7.2.0",
+    "tsx": "^3.14.0",
     "typescript": "^5.2.2"
   }
 }
